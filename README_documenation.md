@@ -20,7 +20,7 @@ Détecter automatiquement les **dommages** (fissures, trous, rayures) et **équi
 ```
 Detection_dom_eq/
 ├── app.py                  # Serveur Flask principal
-├── process_depth.py        # Traitement des images et interaction avec Qwen-VL
+├── main_pro.py             # Traitement des images et interaction avec Qwen-VL
 ├── templates/
 │   ├── index.html          # Interface web d’upload
 │   └── result2.html        # Page résultat avec image annotée
