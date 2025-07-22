@@ -33,34 +33,80 @@ Detection_dom_eq/
 
 ## ⚙️ Lancer le projet
 
-###  1. Installation
+### 🧪 1. Installation et préparation de l’environnement
+
+Commencez par créer un environnement virtuel :
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Sous Windows 
+```
+
+Clone ensuite le dépôt et installe les dépendances :
 
 ```bash
 git clone https://github.com/BenouadahAlaEddine/detection_dommage_equipement.git
-
+cd detection_dommage_equipement
 pip install -r requirements.txt
 ```
 
-###  2. Lancement local (développement)
+---
+
+### 🚀 2. Lancement local (mode développement)
+
+Démarre le serveur Flask localement :
 
 ```bash
 python app.py
 ```
 
-### 🌐 3. Serveur de production
+Accède ensuite à l’interface Web via le navigateur à l'adresse :
+[http://localhost:5000](http://localhost:5000)
+
+---
+
+### 🏭 3. Serveur de production (en arrière-plan)
+
+Pour lancer le serveur de manière persistante :
 
 ```bash
 nohup python app.py > flask.log 2>&1 &
 ```
 
-### 🌍 4. Exposition au réseau (Ngrok)
+- Les logs seront stockés dans `flask.log`
+- Le serveur reste actif même après fermeture de la session
+
+---
+
+### 🌍 4. Exposition au réseau via Ngrok
+
+1. Crée un compte sur [https://ngrok.com/](https://ngrok.com/) et installe Ngrok :
+
+```bash
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+unzip ngrok-stable-linux-amd64.zip
+sudo mv ngrok /usr/local/bin
+```
+
+2. Authentifie de compte Ngrok :
+
+```bash
+ngrok config add-authtoken VOTRE_TOKEN_NGROK
+```
+
+3. Lance le tunnel vers le port 5000 :
 
 ```bash
 nohup ngrok http 5000 --log=stdout > ngrok.log 2>&1 &
 ```
 
-Une URL publique sera générée pour l’application iOS.
+🔗 Une URL publique du type `https://xyz123.ngrok-free.app` sera générée automatiquement.  
+➡️ Cette URL est à utiliser dans  l'application iOS pour envoyer les fichiers ZIP au serveur.
 
+Pour afficher url :
+```bash
+cat ngrok.log | grep "https"
+```
 ---
 
 ##  Fonctionnement du traitement (`main_pro.py`)
