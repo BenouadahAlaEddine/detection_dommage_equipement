@@ -37,7 +37,7 @@ aws_llmv_ios/
 
 ```bash
 git clone https://github.com/votre-utilisateur/votre-repo.git
-cd aws_llmv_ios
+
 pip install -r requirements.txt
 ```
 
