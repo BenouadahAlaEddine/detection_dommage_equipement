@@ -1,17 +1,17 @@
 
 # 📘 Détection Visuelle Automatisée — Documentation Technique
 
-## 🎯 Objectif du projet
+##  Objectif du projet
 
 Détecter automatiquement les **dommages** (fissures, trous, rayures) et **équipements** (prises, interrupteurs, extincteurs) dans les bâtiments à partir d’**images** envoyées via une app **iOS**.
 
-➡️ Le tout est analysé par un **serveur Flask** utilisant le modèle **Qwen-VL**.
+➡ Le tout est analysé par un **serveur Flask** utilisant le modèle **Qwen-VL**.
 
 ---
 
-## 🧱 Architecture du projet
+##  Architecture du projet
 
-📷 *App iOS* → 📤 *Upload ZIP (image + calibration.json)* → 🔍 *Serveur Flask avec Qwen-VL* → 🖼 *Image annotée + JSON des résultats*
+ *App iOS* → 📤 *Upload ZIP (image + calibration.json)* → 🔍 *Serveur Flask avec Qwen-VL* → 🖼 *Image annotée + JSON des résultats*
 
 ---
 
@@ -33,7 +33,7 @@ aws_llmv_ios/
 
 ## ⚙️ Lancer le projet
 
-### 📥 1. Installation
+###  1. Installation
 
 ```bash
 git clone https://github.com/votre-utilisateur/votre-repo.git
@@ -41,7 +41,7 @@ cd aws_llmv_ios
 pip install -r requirements.txt
 ```
 
-### 🚀 2. Lancement local (développement)
+###  2. Lancement local (développement)
 
 ```bash
 python app.py
@@ -63,7 +63,7 @@ Une URL publique sera générée pour l’application iOS.
 
 ---
 
-## 🧠 Fonctionnement du traitement (`process_depth.py`)
+##  Fonctionnement du traitement (`main_pro.py`)
 
 - Décompression du `.zip`
 - Lecture de `calibration.json`
@@ -98,7 +98,7 @@ Accessible via `http://localhost:5000`
 
 ---
 
-## 📤 API REST
+##  API REST
 
 ### Endpoint : `POST /upload_zip`
 
@@ -119,7 +119,7 @@ Accessible via `http://localhost:5000`
 
 ---
 
-## 🤖 Modèle Qwen-VL
+##  Modèle Qwen-VL
 
 Modèle vision/langage (transformer) utilisé pour :
 - Identifier objets/dommages
