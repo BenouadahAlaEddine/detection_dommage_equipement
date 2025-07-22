@@ -36,7 +36,7 @@ Detection_dom_eq/
 ###  1. Installation
 
 ```bash
-git clone https://github.com/votre-utilisateur/votre-repo.git
+git clone https://github.com/BenouadahAlaEddine/detection_dommage_equipement.git
 
 pip install -r requirements.txt
 ```
