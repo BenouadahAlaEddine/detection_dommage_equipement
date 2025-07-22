@@ -18,7 +18,7 @@ Détecter automatiquement les **dommages** (fissures, trous, rayures) et **équi
 ## 📂 Structure du projet
 
 ```
-aws_llmv_ios/
+Detection_dom_eq/
 ├── app.py                  # Serveur Flask principal
 ├── process_depth.py        # Traitement des images et interaction avec Qwen-VL
 ├── templates/
